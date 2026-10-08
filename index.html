@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chathura Ishtaweera · Social media &amp; content</title>
+<meta name="description" content="Video editing, visual design and social media work by Chathura Ishtaweera, Sri Lanka.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2A3A; --navy-2:#2A3850; --gold:#C79A3D; --gold-soft:#F4EAD5;
+    --ink:#252930; --muted:#5F6673; --line:#E3E6EB; --paper:#FFFFFF; --tint:#F4F6F9;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Poppins,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px}
+  img{max-width:100%;display:block}
+  a{color:var(--navy);text-underline-offset:3px}
+  a:focus-visible,iframe:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  .hero{background:var(--navy);color:#fff;border-top:6px solid var(--gold)}
+  .hero .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center;padding-top:80px;padding-bottom:80px}
+  .hero h1{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.05;margin:0;font-weight:700;letter-spacing:.01em}
+  .hero .role{font-family:Lora,Georgia,serif;font-style:italic;color:var(--gold);font-size:1.25rem;margin:14px 0 22px}
+  .hero p.intro{color:#D7DCE4;max-width:34em;margin:0 0 28px}
+  .hero nav{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-block;padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:500;font-size:.95rem}
+  .btn.primary{background:var(--gold);color:var(--navy)}
+  .btn.ghost{color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .btn:hover{filter:brightness(1.08)}
+  .feature .frame{box-shadow:0 0 0 1px #3A4860, 0 30px 60px -24px rgba(0,0,0,.65);border-radius:8px}
+  .feature figcaption{color:#AEB7C4;font-size:.88rem;margin-top:14px}
+  .feature figcaption strong{color:#fff;font-weight:500}
+
+  .frame{position:relative;aspect-ratio:16/9;background:var(--navy-2);border-radius:4px;overflow:hidden}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+  section{padding:76px 0;border-bottom:1px solid var(--line)}
+  section:nth-of-type(even){background:var(--tint)}
+  h2{font-size:1.6rem;margin:0;font-weight:600;color:var(--navy)}
+  h2::after{content:"";display:block;width:56px;height:3px;background:var(--gold);margin-top:12px}
+  .lede{color:var(--muted);max-width:42em;margin:18px 0 36px}
+  h3{font-size:1.05rem;margin:0 0 4px;color:var(--navy);font-weight:600}
+  .meta{font-family:Lora,Georgia,serif;font-style:italic;color:var(--muted);margin:0;font-size:.92rem}
+
+  .videos{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 28px}
+  .videos .wide{grid-column:span 2}
+  .videos h3{margin-top:12px}
+
+  .visuals{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:start}
+  .visuals img{width:100%;border-radius:4px;border:1px solid var(--line)}
+  .spread{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .visuals h3{margin-top:16px}
+  .visuals p{margin:8px 0 0;font-size:.95rem}
+
+  .exp{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;margin-top:36px}
+  .exp ul{padding-left:1.1em;margin:14px 0 0}
+  .exp li{margin-bottom:8px}
+  .exp .about{margin:12px 0 0}
+  .skills dl{margin:0;display:grid;gap:18px}
+  .skills dt{font-weight:600;color:var(--navy);font-size:.95rem}
+  .skills dd{margin:4px 0 0;color:var(--ink);font-size:.95rem}
+
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:44px}
+  .projects p{margin:8px 0 0;font-size:.95rem}
+  .more{margin:44px 0 0;font-size:.95rem;color:var(--muted)}
+
+  footer{background:var(--navy);color:#D7DCE4;padding:48px 0}
+  footer a{color:#fff}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+  footer p{margin:0}
+
+  @media (max-width:860px){
+    .hero .wrap,.visuals,.exp,.projects{grid-template-columns:1fr}
+    .videos{grid-template-columns:1fr}
+    .videos .wide{grid-column:auto}
+    .hero .wrap{gap:44px;padding-top:56px;padding-bottom:56px}
+    section{padding:56px 0}
+  }
+  @media (min-width:861px) and (max-width:1000px){ .videos{grid-template-columns:1fr 1fr} .videos .wide{grid-column:span 2} }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Chathura<br>Ishtaweera</h1>
+      <p class="role">Digital marketing &amp; social media</p>
+      <p class="intro">
+        Multimedia undergraduate at NSBM. I edit short promotional video, design in Photoshop and
+        Illustrator, and write in English and Sinhala. I've also looked after Facebook and Instagram
+        for a language institute, replying to every message and enquiry that came in.
+      </p>
+      <nav aria-label="Quick links">
+        <a class="btn primary" href="#video">See the work</a>
+        <a class="btn ghost" href="Chathura_Ishtaweera.pdf">Download CV</a>
+        <a class="btn ghost" href="mailto:chathuraishtaweera@gmail.com">Email me</a>
+      </nav>
+    </div>
+    <figure class="feature" style="margin:0">
+      <div class="frame">
+        <iframe src="https://drive.google.com/file/d/13KXO7MiCrBWB53B1wpswyxv8w7laefjy/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Singha Yoga Retreat promotional edit"></iframe>
+      </div>
+      <figcaption><strong>Singha Yoga Retreat</strong>, promotional edit in Premiere Pro</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+
+<section id="video">
+  <div class="wrap">
+    <h2>Video edits</h2>
+    <p class="lede">
+      Short-form edits made in Premiere Pro and After Effects. I focus on pacing, cutting to music
+      and clear on-screen text, which is what makes a video work in a social feed.
+    </p>
+    <div class="videos">
+      <article class="wide">
+        <div class="frame"><iframe src="https://drive.google.com/file/d/1ysbuQzEs4rGLqeXLujsY23UFKUwEW0l1/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Plan B coffeehouse, edit 1"></iframe></div>
+        <h3>Plan B coffeehouse, cut 1</h3>
+        <p class="meta">Promo edit</p>
+      </article>
+      <article>
+        <div class="frame"><iframe src="https://drive.google.com/file/d/1xf3MNjy8z-xufsP3Jrz7JQIb8A-gPk8l/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Plan B coffeehouse, edit 2"></iframe></div>
+        <h3>Plan B coffeehouse, cut 2</h3>
+        <p class="meta">Promo edit</p>
+        <div class="frame" style="margin-top:28px"><iframe src="https://drive.google.com/file/d/1ua8iO4-3RNSsMTjCBCegQtK5XeV5DnqV/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Plan B coffeehouse, edit 3"></iframe></div>
+        <h3>Plan B coffeehouse, cut 3</h3>
+        <p class="meta">Promo edit</p>
+      </article>
+      <article>
+        <div class="frame"><iframe src="https://drive.google.com/file/d/1Um0DARyHnBRS-Zl6F0xg0lp3d_vQ7mkf/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="GachaSL main promo"></iframe></div>
+        <h3>GachaSL</h3>
+        <p class="meta">Main promo</p>
+      </article>
+      <article>
+        <div class="frame"><iframe src="https://drive.google.com/file/d/1CdfamwyN2CH65yJAE1voC9QOWsPzPH00/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Calm your interview nerves"></iframe></div>
+        <h3>Calm your interview nerves</h3>
+        <p class="meta">Short video edit</p>
+      </article>
+      <article>
+        <div class="frame"><iframe src="https://drive.google.com/file/d/1XqJLszFj7pr9qcCwroxuyfgpTzPbFyQN/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Advertisement built from AI-generated clips"></iframe></div>
+        <h3>AI clip advertisement</h3>
+        <p class="meta">Short clips from local AI video models, cut together in Premiere Pro</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="wrap">
+    <h2>Visual design</h2>
+    <p class="lede">Image editing and layout work in Photoshop and Illustrator.</p>
+    <div class="visuals">
+      <article>
+        <img src="https://zerosnake00.github.io/images/photoshop-dragon.jpg" alt="Fantasy photo composite: a dragon pierced by glowing swords over a lava canyon under a red moon" loading="lazy">
+        <h3>Fantasy scene composite</h3>
+        <p>Separate stock images blended into one scene by matching light direction, grading every element to one palette and layering atmospheric haze. The same skills keep photos looking consistent across a brand's feed.</p>
+      </article>
+      <article>
+        <div class="spread">
+          <img src="https://zerosnake00.github.io/images/magazin-cover.jpg" alt="STRUCTURES magazine cover with a vector skyline illustration" loading="lazy">
+          <img src="https://zerosnake00.github.io/images/magazin-page.jpg" alt="STRUCTURES magazine inner spread layout" loading="lazy">
+        </div>
+        <h3>STRUCTURES magazine</h3>
+        <p>A print layout built in Illustrator: a vector skyline cover and a fully typeset inner spread, with a clear type hierarchy and text wrapped around images.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2>Experience and skills</h2>
+    <div class="exp">
+      <div>
+        <h3>Assistant Social Media Manager, Enya Language Center</h3>
+        <p class="meta">July to October 2026</p>
+        <p class="about">A language institute offering English, German and Russian classes, plus IELTS, PTE and Cambridge preparation.</p>
+        <ul>
+          <li>Maintained the Facebook and Instagram pages as page admin.</li>
+          <li>Checked and replied to every message and enquiry on both platforms, keeping the pages responsive throughout the placement.</li>
+          <li>Administered the institute's Moodle LMS, which was the main focus of the role.</li>
+          <li>Marked online exams for students across the institute's courses.</li>
+        </ul>
+      </div>
+      <div class="skills">
+        <dl>
+          <div><dt>Social media</dt><dd>Facebook and Instagram page admin, customer enquiry handling</dd></div>
+          <div><dt>Video</dt><dd>Premiere Pro, After Effects</dd></div>
+          <div><dt>Design</dt><dd>Photoshop, Illustrator, typography, UI/UX</dd></div>
+          <div><dt>Web</dt><dd>HTML, CSS, JavaScript, Firebase, Git and GitHub</dd></div>
+          <div><dt>Everyday tools</dt><dd>Moodle, MS Office, Google Workspace</dd></div>
+          <div><dt>Languages</dt><dd>English (fluent), Sinhala (native)</dd></div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Web projects</h2>
+    <p class="lede">Websites I've designed and built myself.</p>
+    <div class="projects">
+      <article>
+        <h3><a href="https://zerosnake00.github.io/GameplayMate/">GamePlayMate</a></h3>
+        <p class="meta">Solo project, HTML, CSS and JavaScript</p>
+        <p>A web platform promoting services to players of Genshin Impact, Honkai: Star Rail, Wuthering Waves and Zenless Zone Zero. I spotted a real need, since freelance platforms restrict these services, then designed the visual identity and built a responsive, card-based site with custom video players.</p>
+      </article>
+      <article>
+        <h3><a href="https://shopping-cart-61720.web.app/">Cart-kun</a></h3>
+        <p class="meta">Personal project, Firebase and JavaScript</p>
+        <p>A shopping-cart web app with sign-in, a Firestore database and Firebase Hosting.</p>
+      </article>
+    </div>
+    <p class="more">For game development, level design and 3D work, see my <a href="https://zerosnake00.github.io/">main portfolio</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Chathura Ishtaweera, Delgoda, Sri Lanka</p>
+    <p>
+      <a href="mailto:chathuraishtaweera@gmail.com">chathuraishtaweera@gmail.com</a> &nbsp;|&nbsp;
+      <a href="tel:+94778878936">+94 77 887 8936</a> &nbsp;|&nbsp;
+      <a href="https://github.com/ZeroSnake00">GitHub</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
