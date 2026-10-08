@@ -44,6 +44,30 @@
   .frame{position:relative;aspect-ratio:16/9;background:var(--deep);border-radius:4px;overflow:hidden}
   .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
   .frame.tall{aspect-ratio:9/16;border-radius:10px}
+  /* Drive's player lays out badly in narrow frames, so it renders at a fixed size and is scaled to fit */
+  .frame.scaled iframe{inset:auto;left:0;top:0;width:450px;height:800px;transform-origin:0 0}
+
+  .thumb{display:block;width:100%;position:relative;padding:0;border:0;cursor:pointer;background:var(--deep);
+         border-radius:10px;overflow:hidden;aspect-ratio:9/16}
+  .thumb.wide{aspect-ratio:16/9;border-radius:4px}
+  .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease, filter .4s ease}
+  .thumb .play{position:absolute;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;
+               background:var(--gold);box-shadow:0 6px 20px rgba(0,0,0,.45)}
+  .thumb .play::after{content:"";position:absolute;left:21px;top:16px;border-style:solid;border-width:11px 0 11px 17px;
+                      border-color:transparent transparent transparent var(--navy)}
+  .thumb:hover img{transform:scale(1.04);filter:brightness(.85)}
+  .thumb:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  dialog#player{border:0;padding:0;background:transparent;max-width:none;max-height:none;overflow:visible}
+  dialog#player::backdrop{background:rgba(5,8,14,.88)}
+  .stage{position:relative;overflow:hidden;border-radius:12px;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+  .stage iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0}
+  .player-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:14px;color:var(--ink)}
+  .player-bar p{margin:0;font-size:.95rem}
+  .player-bar button{background:transparent;color:var(--head);border:1px solid var(--line);border-radius:6px;padding:8px 14px;
+                     font:inherit;font-size:.9rem;cursor:pointer}
+  .player-bar button:hover{border-color:var(--gold)}
+  @media (prefers-reduced-motion:reduce){.thumb img{transition:none}}
 
   section{padding:76px 0;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:0}
@@ -113,7 +137,7 @@
       </nav>
     </div>
     <figure class="feature" style="margin:0">
-      <div class="frame tall">
+      <div class="frame tall scaled">
         <iframe src="https://drive.google.com/file/d/13KXO7MiCrBWB53B1wpswyxv8w7laefjy/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Singha Yoga Retreat promotional edit"></iframe>
       </div>
       <figcaption><strong>Singha Yoga Retreat</strong>, promotional edit in Premiere Pro</figcaption>
@@ -133,33 +157,51 @@
     </p>
     <div class="reels">
       <article>
-        <div class="frame tall"><iframe src="https://drive.google.com/file/d/1ysbuQzEs4rGLqeXLujsY23UFKUwEW0l1/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Plan B coffeehouse, cut 1"></iframe></div>
+        <button class="thumb" type="button" data-id="1ysbuQzEs4rGLqeXLujsY23UFKUwEW0l1" data-shape="tall" data-title="Plan B coffeehouse, cut 1" aria-label="Play Plan B coffeehouse, cut 1">
+          <img src="https://drive.google.com/thumbnail?id=1ysbuQzEs4rGLqeXLujsY23UFKUwEW0l1&amp;sz=w600" alt="" loading="lazy" onerror="this.remove()">
+          <span class="play" aria-hidden="true"></span>
+        </button>
         <h3>Plan B coffeehouse</h3>
         <p class="meta">Promo edit, cut 1</p>
       </article>
       <article>
-        <div class="frame tall"><iframe src="https://drive.google.com/file/d/1xf3MNjy8z-xufsP3Jrz7JQIb8A-gPk8l/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Plan B coffeehouse, cut 2"></iframe></div>
+        <button class="thumb" type="button" data-id="1xf3MNjy8z-xufsP3Jrz7JQIb8A-gPk8l" data-shape="tall" data-title="Plan B coffeehouse, cut 2" aria-label="Play Plan B coffeehouse, cut 2">
+          <img src="https://drive.google.com/thumbnail?id=1xf3MNjy8z-xufsP3Jrz7JQIb8A-gPk8l&amp;sz=w600" alt="" loading="lazy" onerror="this.remove()">
+          <span class="play" aria-hidden="true"></span>
+        </button>
         <h3>Plan B coffeehouse</h3>
         <p class="meta">Promo edit, cut 2</p>
       </article>
       <article>
-        <div class="frame tall"><iframe src="https://drive.google.com/file/d/1ua8iO4-3RNSsMTjCBCegQtK5XeV5DnqV/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Plan B coffeehouse, cut 3"></iframe></div>
+        <button class="thumb" type="button" data-id="1ua8iO4-3RNSsMTjCBCegQtK5XeV5DnqV" data-shape="tall" data-title="Plan B coffeehouse, cut 3" aria-label="Play Plan B coffeehouse, cut 3">
+          <img src="https://drive.google.com/thumbnail?id=1ua8iO4-3RNSsMTjCBCegQtK5XeV5DnqV&amp;sz=w600" alt="" loading="lazy" onerror="this.remove()">
+          <span class="play" aria-hidden="true"></span>
+        </button>
         <h3>Plan B coffeehouse</h3>
         <p class="meta">Promo edit, cut 3</p>
       </article>
       <article>
-        <div class="frame tall"><iframe src="https://drive.google.com/file/d/1Um0DARyHnBRS-Zl6F0xg0lp3d_vQ7mkf/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="GachaSL"></iframe></div>
+        <button class="thumb" type="button" data-id="1Um0DARyHnBRS-Zl6F0xg0lp3d_vQ7mkf" data-shape="tall" data-title="GachaSL" aria-label="Play GachaSL">
+          <img src="https://drive.google.com/thumbnail?id=1Um0DARyHnBRS-Zl6F0xg0lp3d_vQ7mkf&amp;sz=w600" alt="" loading="lazy" onerror="this.remove()">
+          <span class="play" aria-hidden="true"></span>
+        </button>
         <h3>GachaSL</h3>
         <p class="meta">Main promo</p>
       </article>
       <article>
-        <div class="frame tall"><iframe src="https://drive.google.com/file/d/1CdfamwyN2CH65yJAE1voC9QOWsPzPH00/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Calm your interview nerves"></iframe></div>
+        <button class="thumb" type="button" data-id="1CdfamwyN2CH65yJAE1voC9QOWsPzPH00" data-shape="tall" data-title="Calm your interview nerves" aria-label="Play Calm your interview nerves">
+          <img src="https://drive.google.com/thumbnail?id=1CdfamwyN2CH65yJAE1voC9QOWsPzPH00&amp;sz=w600" alt="" loading="lazy" onerror="this.remove()">
+          <span class="play" aria-hidden="true"></span>
+        </button>
         <h3>Calm your interview nerves</h3>
         <p class="meta">Short video edit</p>
       </article>
     </div>
     <article class="landscape">
-      <div class="frame"><iframe src="https://drive.google.com/file/d/1XqJLszFj7pr9qcCwroxuyfgpTzPbFyQN/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="AI clip advertisement"></iframe></div>
+      <button class="thumb wide" type="button" data-id="1XqJLszFj7pr9qcCwroxuyfgpTzPbFyQN" data-shape="wide" data-title="AI clip advertisement" aria-label="Play AI clip advertisement">
+          <img src="https://drive.google.com/thumbnail?id=1XqJLszFj7pr9qcCwroxuyfgpTzPbFyQN&amp;sz=w1000" alt="" loading="lazy" onerror="this.remove()">
+          <span class="play" aria-hidden="true"></span>
+        </button>
       <div>
         <h3>AI clip advertisement</h3>
         <p class="meta">Landscape edit</p>
@@ -252,6 +294,63 @@
     </p>
   </div>
 </footer>
+
+<dialog id="player" aria-label="Video player">
+  <div class="stage"></div>
+  <div class="player-bar"><p class="player-title"></p><button type="button" class="player-close">Close</button></div>
+</dialog>
+
+<script>
+  // Google Drive's player only lays out properly at a reasonable size, so every player
+  // renders at a fixed base size and is scaled down to fit its frame.
+  const BASE = { tall: [450, 800], wide: [960, 540] };
+
+  // Inline hero player
+  document.querySelectorAll(".frame.scaled").forEach(frame => {
+    const iframe = frame.querySelector("iframe");
+    const fit = () => { iframe.style.transform = "scale(" + frame.clientWidth / BASE.tall[0] + ")"; };
+    new ResizeObserver(fit).observe(frame);
+    fit();
+  });
+
+  // Pop-up player for the grid
+  const dialog = document.getElementById("player");
+  const stage = dialog.querySelector(".stage");
+  const titleEl = dialog.querySelector(".player-title");
+  let shape = "tall";
+
+  function fitStage() {
+    const [bw, bh] = BASE[shape];
+    const s = Math.min((window.innerWidth * 0.92) / bw, (window.innerHeight - 110) / bh, 1);
+    stage.style.width = bw * s + "px";
+    stage.style.height = bh * s + "px";
+    const f = stage.querySelector("iframe");
+    if (f) f.style.transform = "scale(" + s + ")";
+  }
+
+  document.querySelectorAll(".thumb").forEach(btn => {
+    btn.addEventListener("click", () => {
+      shape = btn.dataset.shape;
+      const [bw, bh] = BASE[shape];
+      stage.innerHTML = "";
+      const f = document.createElement("iframe");
+      f.src = "https://drive.google.com/file/d/" + btn.dataset.id + "/preview";
+      f.allow = "autoplay; fullscreen";
+      f.allowFullscreen = true;
+      f.title = btn.dataset.title;
+      f.width = bw; f.height = bh;
+      stage.appendChild(f);
+      titleEl.textContent = btn.dataset.title;
+      dialog.showModal();
+      fitStage();
+    });
+  });
+
+  dialog.querySelector(".player-close").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", e => { if (e.target === dialog) dialog.close(); });
+  dialog.addEventListener("close", () => { stage.innerHTML = ""; });
+  window.addEventListener("resize", () => { if (dialog.open) fitStage(); });
+</script>
 
 </body>
 </html>
